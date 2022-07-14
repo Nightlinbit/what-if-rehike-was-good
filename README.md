@@ -37,7 +37,7 @@ The first application you will want to install is XAMPP. This is an Apache Webse
 
 ### [Download XAMPP](https://www.apachefriends.org/index.html)
 
-For Rehike, only the following XAMPP components are required. You may install all of them, especially if you wish to use the development environment for anything else, but otherwise you can everything else:
+For Rehike, only the following XAMPP components are required. You may install all of them, especially if you wish to use the development environment for anything else, but otherwise you can disable everything else:
 
 ![XAMPP components](assets/xampp-components.png)
 

@@ -185,3 +185,7 @@ Enables/disables guide pinning on the watch page.
 `false`:
 
 ![Watch page without any guide, like normal.](assets/config/guideOnWatchPage-false.png)
+
+## `hhCSSFixes`
+
+Consistency/bug fixes for default Hitchhiker CSS. This may conflict with CSS themes, so set it to `false` if you encounter any issues with themes.

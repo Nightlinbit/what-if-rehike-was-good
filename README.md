@@ -39,11 +39,11 @@ The first application you will want to install is XAMPP. This is an Apache Webse
 
 For Rehike, only the following XAMPP components are required. You may install all of them, especially if you wish to use the development environment for anything else, but otherwise you can disable everything else:
 
-![XAMPP components](assets/xampp-components.png)
+![XAMPP components](assets/install-guide/xampp-components.png)
 
 After, you have installed XAMPP, open the program called "XAMPP Control Panel" and you should see the following interface:
 
-![Initial XAMPP interface, dictating installation of the service first via the checkbox on the left, then clicking the start button in the interface afterwards.](assets/xampp-control-initial.png)
+![Initial XAMPP interface, dictating installation of the service first via the checkbox on the left, then clicking the start button in the interface afterwards.](assets/install-guide/xampp-control-initial.png)
 
 Click the buttons in the order presented in the image in order to set up the Apache Webserver component.
 
@@ -86,6 +86,8 @@ If you do so, make sure to fill `htdocs` with *the large folder* rather than dro
 
 As Rehike is in active development, certain features are only being worked on in a single dedicated branch, which will then be merged with the main one once the feature is determined to be complete enough.
 
+The currently recommended branch is `exp-signin-rework`.
+
 You can take a look at the branches on the GitHub website, on the left side of the main repository page. On Git CLI, you can list all branches by simply typing `git branch`.
 
 Switching to another branch on the GitHub website just means downloading the ZIP after clicking its link. With Git CLI, you can type `git switch <branch name>`.
@@ -112,7 +114,7 @@ The installer site has some really annoying design to it that makes Fiddler seem
 
 Just enter some fake information like this on it and it will let you by no problem.
 
-![Fuck the Fiddler website. It doesn't ask you for any email verification, so you don't need to provide that authentically. Just lie about everything.](assets/fiddler-site-lol.png)
+![Fuck the Fiddler website. It doesn't ask you for any email verification, so you don't need to provide that authentically. Just lie about everything.](assets/install-guide/fiddler-site-lol.png)
 
 Once you have Fiddler, install it like any other program.
 
@@ -122,13 +124,13 @@ Then you'll get scared by seeing its UI. It is quite a mess, but Fiddler is actu
 
 You'll want to open the options panel first, and then enable SSL certificates within the program.
 
-![Open Tools -> Options in the Fiddler menubar](assets/fiddler-options.png)
+![Open Tools -> Options in the Fiddler menubar](assets/install-guide/fiddler-options.png)
 
-![In the "Options" window, under the "HTTPS" tab, check "Capture HTTPs CONNECTs" and "Decrypt HTTPS traffic" checkboxes.](assets/fiddler-ssl.png)
+![In the "Options" window, under the "HTTPS" tab, check "Capture HTTPs CONNECTs" and "Decrypt HTTPS traffic" checkboxes.](assets/install-guide/fiddler-ssl.png)
 
 Once you're done with this step, you'll want to set up an AutoResponder rule. Set up the AutoResponder per the screenshot:
 
-![Under the "AutoResponder" tab on the right pane, click the checkboxes that say "Enable rules" and "Unmatched requests passthrough", and then click the "Add rule button".](assets/fiddler-autoresponder.png)
+![Under the "AutoResponder" tab on the right pane, click the checkboxes that say "Enable rules" and "Unmatched requests passthrough", and then click the "Add rule button".](assets/install-guide/fiddler-autoresponder.png)
 
 In the Rule Editor, fill out the top and bottom fields with the following, respectively:
 
@@ -139,6 +141,8 @@ REGEX:^https://www.youtube.com/(.*)
 http://127.0.0.1/$1
 ```
 
+Make sure to hit save!
+
 After this task is done, you can attempt visiting `www.youtube.com`. You should see the old YouTube layout appear, but if you don't, common problems are detailed below.
 
 ### ⚠️ Problem notice!! ⚠️
@@ -147,7 +151,7 @@ If you're seeing the *new layout*, then your browser's traffic is likely not run
 
 If you see a screen like this one, mentioning a **security error** and not letting you through, then you will need to manually install an SSL certificate.
 
-![A notice thrown by the browser in lieu of the page warning about a possible security breach.](assets/ssl-error.png)
+![A notice thrown by the browser in lieu of the page warning about a possible security breach.](assets/install-guide/ssl-error.png)
 
 ### About automatic certificate installation
 
@@ -159,7 +163,7 @@ For what we've observed, this seems to usually work fine for all mainline browse
 
 Firstly, you will need to open the Fiddler options (Tools -> Options) once again. Go back to the HTTPS tab and follow the instructions in the screenshot:
 
-![In the Fiddler SSL tab, open the "Actions" menu and click "Reset All Certificates", and then open it again and click "Export Root Certificate to Desktop".](assets/fiddler-manual-ssl.png)
+![In the Fiddler HTTPS tab, open the "Actions" menu and click "Reset All Certificates", and then open it again and click "Export Root Certificate to Desktop".](assets/install-guide/fiddler-manual-ssl.png)
 
 For safe measure, it's recommended that you invalidate the previous certificates used by clicking "Reset All Certificates" first. Then you want to export the certificate to your desktop in order to install it in your browser.
 
@@ -171,7 +175,7 @@ When you first open Fiddler, it will use very little RAM (especially in comparis
 
 The first mitigation is to limit the number of requests stored. This can be done with a simple dropdown switch in the Fiddler GUI:
 
-![The dropdown menu in the middle of the top row of the Fiddler GUI, labelled "Keep: <number> sessions".](assets/fiddler-session-limiting.png)
+![The dropdown menu in the middle of the top row of the Fiddler GUI, labelled "Keep: <number> sessions".](assets/install-guide/fiddler-session-limiting.png)
 
 It's recommended to limit this to only 100 sessions, since you aren't using Fiddler for its intended development purposes.
 
@@ -228,15 +232,15 @@ This is a general guide on how to install an SSL certificate into your browser. 
 
 On Firefox, the certificate manager can be opened by a button near the bottom of the "Privacy & Security" tab at `about:preferences#privacy`.
 
-![At the bottom of the "Privacy & Security" tab, under the "Certificates" section, click the "View Certificates" button.](assets/firefox-open-certificate-manager.png)
+![At the bottom of the "Privacy & Security" tab, under the "Certificates" section, click the "View Certificates" button.](assets/install-guide/firefox-open-certificate-manager.png)
 
 On Chrome, it appears behind two pages. First, go to the "Privacy and security" tab and find the "Security" link. Then scroll to the bottom of that and click "Manage certificates".
 
-![On the "Privacy and Security" tab, near the bottom, click the "Security" link to be taken to the next page.](assets/chrome-open-certificate-manager-1.png)
+![On the "Privacy and Security" tab, near the bottom, click the "Security" link to be taken to the next page.](assets/install-guide/chrome-open-certificate-manager-1.png)
 
-![Then open the "Manage certificates" popup using the button at the bottom of that page.](assets/chrome-open-certificate-manager-2.png)
+![Then open the "Manage certificates" popup using the button at the bottom of that page.](assets/install-guide/chrome-open-certificate-manager-2.png)
 
 After that, you want to go to the "authorities" tab and import the SSL certificate file into there. **If it asks you what you're using it for, tick all boxes and continue.**
 
-![Firefox's certificate manager. On the "Authorities" tab, you want to import it here.](assets/firefox-import-ssl-authority.png)
-![Chrome's certificate manager. On the "Trusted Root Certification Authorities" tab, you want to import it here.](assets/chrome-import-ssl-authority.png)
+![Firefox's certificate manager. On the "Authorities" tab, you want to import it here.](assets/install-guide/firefox-import-ssl-authority.png)
+![Chrome's certificate manager. On the "Trusted Root Certification Authorities" tab, you want to import it here.](assets/install-guide/chrome-import-ssl-authority.png)

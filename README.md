@@ -78,10 +78,6 @@ rmdir htdocs
 git clone https://github.com/Rehike/Rehike htdocs
 ```
 
-If you feel more comfortable downloading from the GitHub website, you can simply empty the contents of the folder and replace the contents with the contents of the Rehike folder. 
-
-If you do so, make sure to fill `htdocs` with *the large folder* rather than dropping `Rehike-master` in there directly, or else you'll be really confused when you see a file manager instead of YouTube.
-
 ### Branches!
 
 As Rehike is in active development, certain features are only being worked on in a single dedicated branch, which will then be merged with the main one once the feature is determined to be complete enough.

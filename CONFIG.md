@@ -189,3 +189,15 @@ Enables/disables guide pinning on the watch page.
 ## `hhCSSFixes`
 
 Consistency/bug fixes for default Hitchhiker CSS. This may conflict with CSS themes, so set it to `false` if you encounter any issues with themes.
+
+## `accountPickerYtStudio`
+
+Dictates whether the button in the account picker links to Creator Studio or YouTube Studio.
+
+`true`:
+
+![Account picker with "YouTube Studio" button.](assets/config/accountPickerYtStudio-true.png)
+
+`false`:
+
+![Account picker with "Creator Studio" button.](assets/config/accountPickerYtStudio-false.png)
